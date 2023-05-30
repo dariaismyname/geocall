@@ -6,7 +6,7 @@
 * [Setup](#setup)
 
 ## General info
-This is a test project with awesome where you can chat and have a video call with your friends. 
+This is a test project where you can chat and have a video call with your friends. 
 
 ## Technologies
 Project is created with:
