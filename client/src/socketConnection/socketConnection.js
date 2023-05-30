@@ -6,12 +6,12 @@ import {
 } from "../store/actions/UserActions";
 import { chatMessageHandler } from "../store/actions/MessengerActions";
 import { videoRoomsListHandler } from "../store/actions/VideoRoomsActions";
-import {call, disconnect} from "../realtimeCommunication/webRTCHandler";
+import { call, disconnect } from "../realtimeCommunication/webRTCHandler";
 
 let socket = null;
 
 export const connectionWithSocketIOServer = () => {
-  socket = io("http://localhost:5000");
+  socket = io("https://geocall-react-server.onrender.com");
 
   socket.on("connect", () => {
     console.log("connected to socket server");
@@ -29,9 +29,9 @@ export const connectionWithSocketIOServer = () => {
   socket.on("video-room-init", (data) => {
     call(data);
   });
-  socket.on('video-call-disconnect', () => {
-    disconnect()
-  })
+  socket.on("video-call-disconnect", () => {
+    disconnect();
+  });
   socket.on("user-disconnected", (id) => {
     userDisconnectedHandler(id);
   });
