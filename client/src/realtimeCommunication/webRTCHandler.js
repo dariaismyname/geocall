@@ -25,7 +25,7 @@ export const getAccessToLocalStream = async () => {
 export const connectWithPeerServer = () => {
   peer = new Peer(undefined, {
     host: "localhost",
-    port: 9000,
+    port: 443,
     path: "/peer",
   });
 
