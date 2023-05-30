@@ -10,10 +10,10 @@ export const ParticipantsVideos = () => {
   return (
     <div className="fixed bottom-0 right-0 mb-28 flex space-x-2">
       <div>
-        {inRoom && localStream && <Video stream={localStream} muted />}
+        {inRoom && localStream && <Video stream={localStream} />}
         {inRoom && <VideoRoomButtons inRoom={inRoom} />}
       </div>
-      {inRoom && remoteStream && <Video stream={remoteStream} muted />}
+      {inRoom && remoteStream && <Video stream={remoteStream} />}
     </div>
   );
 };
