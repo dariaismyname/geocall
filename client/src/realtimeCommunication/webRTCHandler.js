@@ -26,7 +26,7 @@ export const connectWithPeerServer = () => {
   peer = new Peer(undefined, {
     host: "geocall-react-server.onrender.com",
     port: 443,
-    path: "peer",
+    path: "/peer",
   });
 
   peer.on("open", (id) => {
