@@ -6,6 +6,7 @@ import { setMyLocation } from "../MapPage/MapSlice";
 import { getFakeLocation } from "./FAKE_LOCATIONS";
 import { connectionWithSocketIOServer } from "../socketConnection/socketConnection";
 import { proceedWithLogin } from "../store/actions/LoginPageActions";
+import { connectWithPeerServer } from "../realtimeCommunication/webRTCHandler";
 
 const isUserNameValid = (username) => {
   return username.length > 0 && username.length < 10 && !username.includes(" ");
@@ -62,6 +63,7 @@ const LoginPage = () => {
   useEffect(() => {
     if (myLocation) {
       connectionWithSocketIOServer();
+      connectWithPeerServer();
     }
   }, [myLocation]);
   return (

@@ -4,6 +4,9 @@ import GoogleMapReact from "google-map-react";
 import { MapMarker } from "./MapMarker";
 import { InfoCard } from "../InfoCard/InfoCard";
 import { Messenger } from "../Messanger/Messanger";
+import { VideoRooms } from "../VideoRooms/VideoRooms";
+import { JoinRoomButton } from "../VideoRooms/JoinRoomButton";
+import { RoomButton } from "../VideoRooms/RoomButton";
 
 const MapPage = () => {
   const myLocation = useSelector((state) => state.map.myLocation);
@@ -46,6 +49,8 @@ const MapPage = () => {
           userLocation={cardChosenOption.coords}
         />
       )}
+      <RoomButton />
+      <VideoRooms />
     </div>
   );
 };
